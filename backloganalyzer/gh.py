@@ -1,10 +1,16 @@
 from github import Auth
 from github import Github
+from joblib import Memory
 import subprocess as sp
 import json
+import os
 
 
 TOKEN = None
+CACHEDIR = os.path.expanduser("~/.backloganalyzer/memory")
+
+
+memory = Memory(CACHEDIR, verbose=0)
 
 
 def authenticate(token=None):
@@ -14,6 +20,7 @@ def authenticate(token=None):
     TOKEN = token
 
 
+@memory.cache
 def issue(repository, issue_number):
     g = client()
     repo = g.get_repo(repository)

@@ -2,7 +2,7 @@ import sys
 import argparse
 
 from .gh import authenticate, issue
-from .funcmodule import my_function
+
 
 def main():
     ap = argparse.ArgumentParser()
