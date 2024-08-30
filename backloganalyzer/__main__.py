@@ -2,6 +2,7 @@ import sys
 import argparse
 
 from .gh import authenticate, open_issues
+from .summarize import summarize_issues
 
 
 def main():
@@ -18,7 +19,7 @@ def main():
     issues = open_issues(repo)
 
     print("FOUND open issues: ", len(issues))
-    print(issues[0])
+    summarize_issues(issues)
 
 
 if __name__ == '__main__':
