@@ -1,0 +1,3 @@
+* Backlog Analyzer
+
+Grab GitHub issues from a repository and summarize them with an LLM.
