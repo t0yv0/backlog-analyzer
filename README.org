@@ -1,3 +1,10 @@
 * Backlog Analyzer
 
 Grab GitHub issues from a repository and summarize them with an LLM.
+
+#+begin_src shell :results output verbatim
+  python -m venv venv
+  source venv/bin/activate
+  python -m pip install -r requirements.txt
+  python -m backloganalyzer -r pulumi/aws
+#+end_src
