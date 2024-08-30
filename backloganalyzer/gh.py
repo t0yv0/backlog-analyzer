@@ -21,7 +21,15 @@ def authenticate(token=None):
 
 
 @memory.cache
+def open_issues(repository):
+    g = client()
+    repo = g.get_repo(repository)
+    return [issue(repository, x.number) for x in repo.get_issues(state="open")]
+
+
+@memory.cache
 def issue(repository, issue_number):
+    print(f"Fetching issue {issue_number} from {repository}")
     g = client()
     repo = g.get_repo(repository)
     issue = repo.get_issue(number=issue_number)

@@ -1,22 +1,24 @@
 import sys
 import argparse
 
-from .gh import authenticate, issue
+from .gh import authenticate, open_issues
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('-r', '--repo', required=True, help='GitHub repository')
     ap.add_argument('-t', '--token', required=False, help='GitHub token')
-    ap.add_argument('-i', '--issue', required=True, help='Issue number')
     args = ap.parse_args()
 
     repo = args.repo
     token = args.token
-    issue_number = int(args.issue)
 
     authenticate(token)
-    print(issue(repo, issue_number))
+
+    issues = open_issues(repo)
+
+    print("FOUND open issues: ", len(issues))
+    print(issues[0])
 
 
 if __name__ == '__main__':
