@@ -2,6 +2,8 @@
 
 Grab GitHub issues from a repository and summarize them with an LLM.
 
+Requires [[https://ollama.com][Ollama]] installed and running.
+
 #+begin_src shell :results output verbatim
   python -m venv venv
   source venv/bin/activate
