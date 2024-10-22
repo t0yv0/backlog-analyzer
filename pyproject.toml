@@ -8,7 +8,8 @@ dependencies = [
    "joblib",
    "openai",
    "PyGitHub",
-   "numpy"
+   "numpy",
+   "tqdm"
 ]
 [project.scripts]
 banal = "banal:main"

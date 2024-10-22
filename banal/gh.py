@@ -3,6 +3,7 @@ from banal.mem import memory
 import json
 import os
 import subprocess as sp
+from tqdm import tqdm
 
 
 def client(token=None):
@@ -12,9 +13,14 @@ def client(token=None):
 
 
 @memory.cache(ignore=["client"])
-def open_issues(client, repository):
+def open_issues(client, repository, progress_bar=False):
     repo = client.get_repo(repository)
-    return [issue(client, repository, x.number) for x in repo.get_issues(state="open")]
+    all_issues = list(repo.get_issues(state="open"))
+    if progress_bar:
+        print("Downloading GitHub issues..")
+    wrap = tqdm if progress_bar else list
+    all_issues = wrap(all_issues)
+    return [issue(client, repository, x.number) for x in all_issues]
 
 
 @memory.cache(ignore=["client"])

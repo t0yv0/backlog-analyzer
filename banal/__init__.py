@@ -10,8 +10,8 @@ def main():
     args = ap.parse_args()
 
     gh_client = gh.client(token=args.token)
-    issues = gh.open_issues(gh_client, args.repo)
-    response = ai.chat(args.repo, issues, args.query)
+    issues = gh.open_issues(gh_client, args.repo, progress_bar=True)
+    response = ai.chat(args.repo, issues, args.query, progress_bar=True)
     print(response)
 
 
