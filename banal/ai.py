@@ -1,5 +1,5 @@
-from mem import memory
-import gh
+from banal.mem import memory
+from banal import gh
 import numpy as np
 import openai
 import sys

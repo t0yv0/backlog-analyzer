@@ -1,5 +1,5 @@
 from github import Auth, Github
-from mem import memory
+from banal.mem import memory
 import json
 import os
 import subprocess as sp

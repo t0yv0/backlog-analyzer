@@ -1,6 +1,6 @@
 [project]
 name = "backloganalyzer"
-version = "0.0.1"
+version = "0.0.3"
 description = "Answer questions about your GitHub backlog"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -10,3 +10,5 @@ dependencies = [
    "PyGitHub",
    "numpy"
 ]
+[project.scripts]
+banal = "banal:main"
