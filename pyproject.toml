@@ -1,6 +1,6 @@
 [project]
-name = "backloganalyzer"
-version = "0.0.3"
+name = "banal"
+version = "0.0.4"
 description = "Answer questions about your GitHub backlog"
 readme = "README.md"
 requires-python = ">=3.10"

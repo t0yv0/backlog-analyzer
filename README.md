@@ -4,11 +4,18 @@ Grab GitHub issues from a repository and answer questions about them with an LLM
 
 The chatbot will summarize top 20 open issues by cosine similarity on embeddings.
 
+## Installation
+
+``` shell
+uv tool install .
+```
+
+## Usage
+
 Requires OPENAI_API_KEY environment variable to be set.
 
-
 ```shell
-$ uv run banal -r pulumi/pulumi-azuread -q "What are the issues with outputs?"                                               ~
+$ banal -r pulumi/pulumi-azuread -q "What are the issues with outputs?"                                               ~
 
 The issues related to outputs in the provided GitHub issues involve several aspects:
 
